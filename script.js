@@ -63,6 +63,7 @@ function mostrarPosicao(posicao){
     `
 
     atualizaMapa(latitude,longitude)
+    // bucarClima(latitude,longitude);
 }
 
 async function  buscarEndereco() {
@@ -110,3 +111,28 @@ function atualizaMapa(latitude,longitude){
         .bindPopup("📍 Você está aqui")
         .openPopup ()
 }
+
+// async function buscarClima(lat, lon) {
+//     try {
+//         // Faz a requisição para a API Open-Meteo
+//         const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
+//         const resposta = await fetch(url);
+//         const dados = await resposta.json();
+//         console.log(dados);
+
+//         // Exibe os dados do clima
+//         const clima = dados.current_weather;
+//         const temperatura = clima.temperature;
+//         const velocidadeVento = clima.windspeed;
+
+//         // Exibe os dados no HTML
+//         resultado.innerHTML += `
+//         <h3>🌤️ Clima atual:</h3>
+//         Temperatura: ${temperatura}°C<br>
+//         Velocidade do Vento: ${velocidadeVento} km/h<br>
+//         `;
+//     } catch (erro) {
+//         resultado.innerHTML += "❌ Erro ao buscar dados climáticos!";
+//         console.error("Erro ao buscar clima:", erro);
+//     }
+// }
